@@ -5,7 +5,7 @@ services:
     image: thu-hole-frontend
     container_name: thu-hole-frontend-container
     ports:
-      - "8000:3000"
+      - "3000:3000"
     env_file:
       - .env
     restart: always

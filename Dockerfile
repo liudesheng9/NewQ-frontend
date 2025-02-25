@@ -24,7 +24,7 @@ RUN yarn install
 RUN yarn run build
 
 # 定义启动命令
-CMD [ "yarn", "dev" ]
+CMD [ "yarn", "start" ]
 
 # (可选) 暴露端口
 EXPOSE 3000

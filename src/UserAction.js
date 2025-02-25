@@ -19,7 +19,7 @@ import { save_attentions } from './Attention';
 import './UserAction.css';
 
 const REPOSITORY = 'https://git.thu.monster/newthuhole/';
-const REPOSITORY_Q = 'https://github.com/newq-hole/NewQ-frontend'
+const REPOSITORY_Q = 'https://github.com/newq-hole/NewQ-frontend';
 export const EMAIL = 'new-q@thuhole.site';
 
 export const TokenCtx = React.createContext({
@@ -50,11 +50,29 @@ export function InfoSidebar(props) {
         &nbsp;&nbsp;
         <a href="/policy.html" target="_blank">
           <span className="icon icon-textfile" />
-          <label>树洞规范（试行）</label>
+          <label>树洞规范（新T）</label>
         </a>
-        <p>
+        <a href="/policy_q.html" target="_blank">
+          <span className="icon icon-textfile" />
+          <label>树洞规范（新清）</label>
+        </a>
+        {/* <p>
           <em>强烈建议开始使用前先看一遍所有设置选项</em>
-        </p>
+        </p> */}
+      </div>
+      <div className="box list-menu">
+        &nbsp;&nbsp;
+        <a href="https://new-q.thuhole.site/" target="_blank">
+          <span className="icon icon-textfile" />
+          <label>跳转至新Q</label>
+        </a>
+        <a href="https://new-t.github.io/" target="_blank">
+          <span className="icon icon-textfile" />
+          <label>跳转至新T</label>
+        </a>
+        {/* <p>
+          <em>强烈建议开始使用前先看一遍所有设置选项</em>
+        </p> */}
       </div>
       <div className="box help-desc-box">
         <p>
@@ -77,7 +95,7 @@ export function InfoSidebar(props) {
           关于 中的描述。
         </p>
         <p>
-          联系我们：<a href={'mailto:' + EMAIL}>{EMAIL}</a> 。
+          联系我们：<a href={'mailto:' + EMAIL}>{EMAIL}</a> ,
         </p>
       </div>
       <div className="box help-desc-box">
@@ -136,13 +154,12 @@ export function InfoSidebar(props) {
       </div>
       <div className="box help-desc-box2">
         <p>
-          新Q树洞是基于新T树洞，作出了少量修改版本，继承新T树洞的开源精神，基于
+          新清树洞是基于新T树洞，作出了少量修改版本，继承新T树洞的开源精神，基于
           <a href="http://www.wtfpl.net/about/" target="_blank">
             WTFPLv2
           </a>
           协议在{' '}
           <a href={REPOSITORY_Q} target="_blank">
-            <span className="icon icon-github" />
             Github
           </a>{' '}
           开源。
@@ -336,7 +353,7 @@ export class LoginForm extends Component {
                       </p>
                       <p>
                         <small>
-                          新T树洞
+                          新清树洞
                           面向T大学生，通过已验证身份的第三方服务授权登陆。
                         </small>
                       </p>
