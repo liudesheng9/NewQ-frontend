@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  server-build:
+    image: thu-hole-frontend
+    container_name: thu-hole-frontend-container
+    ports:
+      - "8000:3000"
+    env_file:
+      - .env
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile # 确保 Dockerfile 的路径正确
+
+

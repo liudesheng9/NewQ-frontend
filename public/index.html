@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="%PUBLIC_URL%/static/favicon/512.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/static/favicon/512.png">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <meta name="theme-color" content="#333333"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/static/favicon/180.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="%PUBLIC_URL%/static/favicon/512.png" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="树洞">
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/static/splash/750x1334.png" media="(device-width: 375px) and (-webkit-device-pixel-ratio: 2)"/>
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash/1242x2208.png" media="(device-width: 414px) and (-webkit-device-pixel-ratio: 3)"/>
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash/1668x2388.png" media="(device-width: 834px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/>
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/static/splash/2388x1668.png" media="(device-width: 834px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/>
+
+    <title>新清树洞</title>
+</head>
+<script>
+  function force_reload() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .getRegistrations()
+        .then((registrations) => {
+          for (let registration of registrations) {
+            console.log('unregister', registration);
+            registration.unregister();
+          }
+        });
+    }
+    cache().clear();
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 200);
+  }
+
+  let token;
+  if (window.location.hash.startsWith('###token=')) {
+    token = window.location.hash.substr(9);
+    window.location.hash = '';
+  }
+
+  if (window.location.search.startsWith('?token')) {
+    token = window.location.search.substr(7);
+    window.location.search = '';
+  }
+  if (token) {
+      if (token.endsWith(encodeURI('_任意自定义后缀'))) {
+        let tmp_token_suf =
+          localStorage['TOKEN_SUF'] ||
+          prompt('设置一个你专属的临时token后缀吧') ||
+          Math.random();
+        localStorage['TOKEN_SUF'] = tmp_token_suf;
+        token = `${token.split('_')[0]}_${tmp_token_suf}`;
+      }
+      localStorage['TOKEN'] = token;
+  }
+</script>
+
+<body>
+  <div id="root">
+    树洞——校内匿名交流平台
+  </div>
+</body>
+</html>

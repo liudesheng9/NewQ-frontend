@@ -1,0 +1,163 @@
+.login-form p {
+  margin: 1em 0;
+  text-align: center;
+}
+.login-form button {
+  min-width: 6rem;
+}
+
+.reply-form {
+  display: flex;
+}
+.reply-sticky {
+  position: sticky;
+  bottom: 0;
+}
+
+.reply-form textarea {
+  resize: vertical;
+  flex: 1;
+  min-height: 2em;
+  height: 4em;
+}
+
+.reply-form button {
+  flex: 0 0 3em;
+  margin-right: 0;
+}
+
+.reply-preview {
+  flex: 1;
+  min-height: 2em;
+}
+
+.post-form-bar {
+  line-height: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.post-form-bar .checkbox-bar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-form-bar .checkbox-bar label {
+  flex: 0 0 auto;
+  margin: 0 0.5rem;
+}
+
+.post-form .file-input {
+  border: none;
+  width: 100px;
+  padding: 0 0 0.5em 0.5em;
+  color: transparent;
+}
+
+@media screen and (max-width: 580px) {
+  .post-form-bar input[type='file'] {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .post-form-bar input[type='file'] {
+    width: 100px;
+  }
+}
+
+.post-form-bar button {
+  flex: 0 0 6em;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 580px) {
+  .post-form-bar button {
+    flex: 0 0 4.5em;
+    margin-right: 0;
+  }
+}
+
+.post-form-img-tip {
+  font-size: small;
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
+
+.post-form textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 5em;
+  height: 20em;
+}
+
+.post-preview {
+  width: 100%;
+  min-height: 5em;
+}
+
+.life-info-table {
+  width: 100%;
+  margin: auto;
+}
+@media screen and (min-width: 375px) {
+  .life-info-table {
+    width: 315px;
+  }
+}
+.life-info-table td {
+  padding: 0.25em;
+}
+.life-info-table td:nth-child(1) {
+  font-weight: bold;
+  text-align: right;
+}
+
+.life-info-error a {
+  --var-link-color: hsl(25, 100%, 45%);
+}
+
+.spoiler-input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 2px;
+}
+
+.post-form-poll-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-form-poll-options input {
+  margin: 5px 0;
+}
+
+.post-form-poll-options h6 {
+  margin-bottom: 0;
+}
+
+.reply-form-opt-box {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 6rem;
+}
+
+.reply-form-opt-box > label {
+  margin-left: 5px;
+}
+
+.reply-form-buttons {
+  display: flex;
+  flex: 0 0 2.5rem;
+}
+
+.update-title-btn {
+  margin-top: 6px;
+}
+
+.role-card {
+  padding: 5px;
+  background: #d33a;
+  border-radius: 6px;
+}
