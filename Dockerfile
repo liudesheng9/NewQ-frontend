@@ -3,7 +3,7 @@ FROM node:20-alpine
 
 # 下载git
 RUN apk update && \
-    apk add --no-cache git openssh-client && \
+    apk add --no-cache git && \
     rm -rf /var/cache/apk/*
 
 WORKDIR /app/
@@ -16,6 +16,12 @@ WORKDIR /app/NewQ-frontend/
 
 # 启用 Corepack
 RUN corepack enable
+
+# 复制 package.json 和 yarn.lock 文件到工作目录
+COPY package.json yarn.lock ./
+
+# 安装依赖 (使用 yarn)，利用 Docker Cache
+RUN yarn install --frozen-lockfile
 
 # 安装依赖 (使用 yarn)
 RUN yarn install
