@@ -52,6 +52,8 @@ export function DropdownSidebar() {
         <option value="选项1">新Q树洞</option>
         <option value="选项2">旧洞</option>
       </select>
+
+      {selectedValue && <p>你选择了: {selectedValue}</p>}
     </div>
   );
 }
