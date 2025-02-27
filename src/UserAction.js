@@ -46,14 +46,12 @@ export function DropdownSidebar() {
 
   return (
     <div>
-      <label htmlFor="dropdown">选择一个选项：</label>
+      <label htmlFor="dropdown">选择后端服务器：</label>
       <select id="dropdown" value={selectedValue} onChange={handleChange}>
         <option value="">请选择</option>
-        <option value="选项1">选项1</option>
-        <option value="选项2">选项2</option>
+        <option value="选项1">新Q树洞</option>
+        <option value="选项2">旧洞</option>
       </select>
-
-      {selectedValue && <p>你选择了: {selectedValue}</p>}
     </div>
   );
 }
