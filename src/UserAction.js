@@ -39,7 +39,7 @@ export function DropdownSidebar() {
       console.log('切换到后端 1:', window.BACKEND);
     } else if (event.target.value === '旧洞') {
       // 切换到后端 2
-      window.BACKEND = process.env.REACT_APP_BACKEND || 'http://api2.thuhole.site/';
+      window.BACKEND = process.env.REACT_APP_BACKEND_OLD || 'http://api2.thuhole.site/';
       console.log('切换到后端 2:', window.BACKEND);
     }
   };
