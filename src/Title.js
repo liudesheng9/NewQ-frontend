@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 // import {AppSwitcher} from './infrastructure/widgets';
-import { InfoSidebar, PostForm } from './UserAction';
+import { InfoSidebar, DropdownSidebar, PostForm } from './UserAction';
 import { TokenCtx } from './UserAction';
 
 import './Title.css';
@@ -201,14 +201,11 @@ export function Title(props) {
           <p className="centered-line">
             <span
               onClick={() =>
-                props.show_sidebar(
-                  '新清树洞',
-                  <InfoSidebar show_sidebar={props.show_sidebar} />,
-                )
+                props.show_sidebar('新清树洞', <DropdownSidebar />)
               }
             >
               新清树洞
-              <sup>{window.config.room || '?'}</sup>
+              <sup>{window.config.room || '0'}</sup>
             </span>
           </p>
         </div>

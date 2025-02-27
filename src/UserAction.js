@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
   get_api_base,
   get_api_base_2,
-  STORAGE_BASE,
   SafeTextarea,
   PromotionBar,
   HighlightedMarkdown,
@@ -26,6 +25,38 @@ export const TokenCtx = React.createContext({
   value: null,
   set_value: () => {},
 });
+
+// server list
+export function DropdownSidebar() {
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+
+    if (event.target.value === '新Q树洞') {
+      // 切换到后端 1
+      window.BACKEND = process.env.REACT_APP_BACKEND || 'http://api.thuhole.site/';
+      console.log('切换到后端 1:', window.BACKEND);
+    } else if (event.target.value === '旧洞') {
+      // 切换到后端 2
+      window.BACKEND = process.env.REACT_APP_BACKEND || 'http://api2.thuhole.site/';
+      console.log('切换到后端 2:', window.BACKEND);
+    }
+  };
+
+  return (
+    <div>
+      <label htmlFor="dropdown">选择一个选项：</label>
+      <select id="dropdown" value={selectedValue} onChange={handleChange}>
+        <option value="">请选择</option>
+        <option value="选项1">选项1</option>
+        <option value="选项2">选项2</option>
+      </select>
+
+      {selectedValue && <p>你选择了: {selectedValue}</p>}
+    </div>
+  );
+}
 
 export function InfoSidebar(props) {
   return (
