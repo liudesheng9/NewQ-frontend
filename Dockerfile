@@ -8,8 +8,11 @@ RUN apk update && \
 
 WORKDIR /app/
 
+
+RUN rm -rf app/NewQ-frontend
+
 # 复制源代码
-RUN git clone https://github.com/newq-hole/NewQ-frontend.git .
+RUN git clone https://github.com/newq-hole/NewQ-frontend.git
 
 # 设置工作目录
 WORKDIR /app/NewQ-frontend/
