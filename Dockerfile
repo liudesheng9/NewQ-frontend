@@ -6,18 +6,13 @@ RUN apk update && \
     apk add --no-cache git && \
     rm -rf /var/cache/apk/*
 
-WORKDIR /app/
-
-
-RUN rm -rf app/NewQ-frontend
-
-# 复制源代码
-RUN git clone https://github.com/newq-hole/NewQ-frontend.git
-
-COPY package.json yarn.lock ./
+RUN mkdir NewQ-frontend
 
 # 设置工作目录
 WORKDIR /app/NewQ-frontend/
+
+
+COPY package.json yarn.lock ./
 
 # 启用 Corepack
 RUN corepack enable
@@ -27,6 +22,9 @@ COPY package.json yarn.lock ./
 
 # 安装依赖 (使用 yarn)，利用 Docker Cache
 RUN yarn install --frozen-lockfile
+
+# 复制源代码
+RUN git clone https://github.com/newq-hole/NewQ-frontend.git .
 
 # 构建应用程序 (如果需要)
 RUN yarn run build
