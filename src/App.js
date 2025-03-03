@@ -41,7 +41,7 @@ class App extends Component {
     this.on_pressure_bound = this.on_pressure.bind(this);
 
     window.BACKEND =
-      localStorage['BACKEND'] || process.env.REACT_APP_BACKEND || '/';
+       process.env.REACT_APP_BACKEND || '/';
 
     check_service_work_update(true);
     if (process.env.NODE_ENV === 'production') {
