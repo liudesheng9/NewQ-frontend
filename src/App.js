@@ -60,8 +60,8 @@ class App extends Component {
           //       .split('|')[0],
           //   );
           //   window.BACKEND = `https://${address}/`;
+          // });
           localStorage['BACKEND'] = window.BACKEND;
-          });
       }, 12345);
     }
   }
