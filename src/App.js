@@ -42,7 +42,10 @@ class App extends Component {
 
     window.BACKEND =
        process.env.REACT_APP_BACKEND || '/';
+    
+    window.config.room = window.config.room ||  "0";
 
+    
     check_service_work_update(true);
     if (process.env.NODE_ENV === 'production') {
       setTimeout(() => {
