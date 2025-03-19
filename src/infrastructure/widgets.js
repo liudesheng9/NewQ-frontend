@@ -174,7 +174,7 @@ class LoginPopupSelf extends Component {
               &nbsp;GitHub
             </a>
             <br/ >
-            <small>(请先添加清华邮箱/校友邮箱)</small>
+            <small>(请先添加北大邮箱/清华邮箱/校友邮箱)</small>
           </p>
           {/* <p>
             <a href={window.BACKEND + "_login?p=cs"} target="_blank"
